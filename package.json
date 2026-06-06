@@ -1,0 +1,21 @@
+{
+  "name": "qr-professionale-postgres",
+  "version": "1.0.0",
+  "description": "QR Manager professionale con Node.js, PostgreSQL, sync intelligente, import QR e dashboard moderna",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "seed": "node server.js --seed-only"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "jsqr": "^1.4.0",
+    "node-cron": "^3.0.3",
+    "pg": "^8.13.1",
+    "sql.js": "^1.11.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
