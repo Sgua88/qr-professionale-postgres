@@ -32,6 +32,257 @@
   white-space:nowrap;
 }
 
+
+/* ===== MOBILE PRO PLUS ===== */
+@media(max-width:760px){
+  body{background:#f3f6fb}
+  .topbar{
+    min-height:64px;
+    padding:10px 14px;
+    gap:10px;
+    box-shadow:0 10px 28px rgba(15,23,42,.06);
+  }
+  .topbar h2{
+    margin:0;
+    font-size:20px;
+    line-height:1.1;
+  }
+  .topbar div{
+    font-size:12px;
+    color:#667085;
+  }
+  .hamb{
+    width:44px;
+    height:44px;
+    border-radius:14px;
+    background:#f1f5f9;
+  }
+  .page{
+    padding:12px 10px 96px;
+  }
+  .card{
+    padding:14px;
+    border-radius:18px;
+    margin-bottom:14px;
+  }
+  .card h3{
+    font-size:18px;
+    margin-bottom:10px;
+  }
+  .cards{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:12px;
+  }
+  .kpi{
+    border-radius:16px;
+    padding:12px;
+    gap:10px;
+    min-height:88px;
+  }
+  .kpi .icon{
+    width:40px;
+    height:40px;
+    border-radius:14px;
+    font-size:20px;
+    flex:0 0 auto;
+  }
+  .kpi b{
+    font-size:22px;
+  }
+  .kpi span{
+    font-size:11px;
+    line-height:1.15;
+  }
+  .filters{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    position:sticky;
+    top:64px;
+    z-index:15;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(12px);
+    padding:10px;
+    margin:-4px -4px 14px;
+    border:1px solid #e6eaf2;
+    border-radius:16px;
+    box-shadow:0 10px 28px rgba(15,23,42,.06);
+  }
+  .field label{
+    font-size:11px;
+  }
+  input,select,button,.btn{
+    min-height:46px;
+    font-size:15px;
+    border-radius:14px;
+  }
+  .filter-actions{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  .filter-actions button{
+    min-height:48px;
+  }
+  .tablewrap{
+    border:0;
+    overflow:visible;
+    border-radius:0;
+    background:transparent;
+  }
+  table{
+    min-width:0!important;
+    width:100%;
+    display:block;
+    background:transparent;
+  }
+  thead{
+    display:none;
+  }
+  tbody{
+    display:block;
+  }
+  tr{
+    display:block;
+    background:#fff;
+    border:1px solid #e6eaf2;
+    border-radius:18px;
+    margin:0 0 12px;
+    padding:10px 12px;
+    box-shadow:0 10px 28px rgba(15,23,42,.06);
+  }
+  td{
+    display:grid;
+    grid-template-columns:128px minmax(0,1fr);
+    gap:8px;
+    align-items:center;
+    border-bottom:1px solid #eef2f7;
+    padding:9px 0;
+    font-size:13px;
+    white-space:normal;
+    word-break:break-word;
+  }
+  td:last-child{
+    border-bottom:0;
+  }
+  td::before{
+    content:attr(data-label);
+    color:#667085;
+    font-size:11px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.02em;
+  }
+  td:first-child{
+    grid-template-columns:1fr;
+    border-bottom:1px solid #e6eaf2;
+    padding-top:4px;
+    padding-bottom:12px;
+  }
+  td:first-child::before{
+    content:"Matricola";
+    margin-bottom:4px;
+  }
+  td:first-child b{
+    font-size:18px;
+    color:#111827;
+  }
+  .cliente-cell{
+    width:auto!important;
+    max-width:100%!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+  }
+  .badge{
+    display:inline-flex;
+    width:max-content;
+    max-width:100%;
+    white-space:normal;
+    line-height:1.2;
+    padding:6px 10px;
+  }
+  .qr{
+    width:42px;
+    height:42px;
+    border-radius:14px;
+    font-size:18px;
+  }
+  .pagination{
+    position:sticky;
+    bottom:74px;
+    z-index:14;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(12px);
+    border:1px solid #e6eaf2;
+    border-radius:18px;
+    padding:10px;
+    box-shadow:0 10px 28px rgba(15,23,42,.08);
+  }
+  .pagination span{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    font-size:12px;
+  }
+  .pagination span:first-child{
+    display:block;
+    text-align:center;
+    color:#667085;
+    font-weight:800;
+  }
+  .pagination button,.pagination select{
+    width:100%;
+    min-height:44px;
+  }
+  .mobilebar{
+    left:8px;
+    right:8px;
+    bottom:8px;
+    border-radius:22px;
+    padding:8px 6px;
+  }
+  .mobilebar a{
+    padding:7px 2px;
+    border-radius:14px;
+    font-weight:800;
+  }
+  .mobilebar a:active{
+    background:#f1f5f9;
+  }
+  .import-photo-card{
+    min-height:150px;
+    border-radius:18px;
+  }
+  .import-photo-icon{
+    font-size:38px;
+    margin-bottom:10px;
+  }
+  .import-photo-title{
+    font-size:17px;
+  }
+  .metrics{
+    grid-template-columns:1fr;
+  }
+  pre{
+    max-height:420px;
+    font-size:12px;
+  }
+}
+@media(max-width:420px){
+  td{
+    grid-template-columns:110px minmax(0,1fr);
+    font-size:12.5px;
+  }
+  .topbar h2{
+    font-size:18px;
+  }
+  .cards{
+    grid-template-columns:1fr;
+  }
+}
+
 </style></head><body><div class="overlay" id="overlay" onclick="toggleMenu(false)"></div><div class="app"><aside class="sidebar" id="side"><div class="brand"><div class="logo">▦</div><div><h1>QR Manager</h1><p>Gestione dispositivi</p></div></div><nav class="nav"><a class="active" onclick="showPage('dashboard',this)">🏠 Dashboard</a><a onclick="showPage('devices',this)">▣ Dispositivi</a><a onclick="showPage('import',this)">▦ Importa QR Code</a><a onclick="showPage('sync',this)">↻ Sincronizzazione</a><a onclick="showPage('logs',this)">▤ Log Attività</a></nav><div class="userbox"><b>rasisnc</b><br><small>Amministratore</small><br><br><a class="btn secondary" href="/download-db">Scarica DB</a></div></aside><main><header class="topbar"><button class="hamb" onclick="toggleMenu(true)">☰</button><h2 id="pageTitle">Dashboard</h2><div>📅 <span id="dateNow"></span></div></header>
 <section class="page active" id="dashboard"><div class="cards"><div class="kpi"><div class="icon i1">▣</div><div><span>Dispositivi Totali</span><br><b id="kpiTotal">0</b></div></div><div class="kpi"><div class="icon i2">✓</div><div><span>Sincronizzati</span><br><b id="kpiUpdated">0</b></div></div><div class="kpi"><div class="icon i3">◷</div><div><span>Da Sincronizzare</span><br><b id="kpiRemain">0</b></div></div><div class="kpi"><div class="icon i4">⚠</div><div><span>Errori</span><br><b id="kpiErrors">0</b></div></div></div><div class="card"><h3>Lista Dispositivi</h3><div id="filtersDash"></div><div class="tablewrap"><table id="tabDash"><thead id="thead1"></thead><tbody id="tbodyDash"></tbody></table></div><div id="paginationDash"></div></div></section>
 <section class="page" id="devices"><div class="card"><h3>Lista Dispositivi</h3><div id="filtersDevices"></div><div class="tablewrap"><table id="tabDevices"><thead id="thead2"></thead><tbody id="tbodyDevices"></tbody></table></div><div id="paginationDevices"></div></div></section>
@@ -44,7 +295,20 @@ function truncateClientName(value){
   return text.length > 42 ? text.slice(0, 42) + '...' : text;
 }
 
-function esc(v){return String(v??'').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]))}function badge(s){let x=String(s||'');let c=x.toLowerCase().includes('non')||x.toLowerCase().includes('errore')?'bad':x.toLowerCase().includes('trasmette')?'ok':'warn';return `<span class="badge ${c}">${esc(x||'Da Sync')}</span>`}function filtersHtml(){return `<div class="filters"><div class="field"><label>Ricerca</label><input id="search" placeholder="Matricola, P.IVA, cliente o link..."></div><div class="field"><label>Mese Ultima VP</label><select id="vpMonth"><option value="">Tutti</option>${['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'].map((m,i)=>`<option value="${String(i+1).padStart(2,'0')}">${m}</option>`).join('')}</select></div><div class="field"><label>Anno VP</label><input id="vpYear" type="number" placeholder="Tutti"></div><div class="field"><label>Azioni</label><div class="filter-actions"><button onclick="resetPaginationAndLoad()">Applica Filtri</button><button class="secondary" onclick="resetFilters()">Reset Filtri</button></div></div></div>`}document.getElementById('filtersDash').innerHTML=filtersHtml();document.getElementById('filtersDevices').innerHTML=filtersHtml();function renderHead(id){document.getElementById(id).innerHTML='<tr>'+headers.map(h=>`<th onclick="sortTable(this)">${h}</th>`).join('')+'</tr>'}renderHead('thead1');renderHead('thead2');function renderRows(rows){return rows.map(r=>`<tr><td><b>${esc(r.matricola)}</b></td><td>${badge(r.stato)}</td><td>${esc(r.data_vp)}</td><td>${esc(r.risultato_vp)}</td><td>${esc(r.piva_laboratorio)}</td><td>${esc(r.cf_tecnico)}</td><td>${esc(r.ultima_trasmissione)}</td><td>${esc(r.versione_software)}</td><td>${esc(r.partita_iva)}</td><td class="cliente-cell" title="${esc(truncateClientName(r.denominazione))}">${esc(truncateClientName(r.denominazione))}</td><td>${r.link_qr?`<a class="qr" target="_blank" href="${esc(r.link_qr)}">▦</a>`:''}</td><td>${esc(r.last_sync)}</td></tr>`).join('')}function getFilter(){let p=document.querySelector('.page.active');return {q:p.querySelector('#search')?.value||'',vpMonth:p.querySelector('#vpMonth')?.value||'',vpYear:p.querySelector('#vpYear')?.value||''}}async function loadData(){let f=getFilter();let params=new URLSearchParams({...f,page:currentPage,perPage});let res=await fetch('/api/results?'+params.toString());let data=await res.json();currentData=data.rows||[];totalPages=data.totalPages||1;totalRecords=data.total||currentData.length;document.getElementById('tbodyDash').innerHTML=renderRows(currentData);document.getElementById('tbodyDevices').innerHTML=renderRows(currentData);document.getElementById('kpiTotal').textContent=totalRecords.toLocaleString('it-IT');renderPagination();}function renderPagination(){let h=`<div class="pagination"><span>Pagina ${currentPage} di ${totalPages} - Totale ${totalRecords} record</span><span><button class="secondary" ${currentPage<=1?'disabled':''} onclick="changePage(-1)">← Precedente</button> <button class="secondary" ${currentPage>=totalPages?'disabled':''} onclick="changePage(1)">Successiva →</button> <select onchange="perPage=Number(this.value);currentPage=1;loadData()"><option selected>100</option><option>250</option><option>500</option></select></span></div>`;document.getElementById('paginationDash').innerHTML=h;document.getElementById('paginationDevices').innerHTML=h}function changePage(d){currentPage+=d;if(currentPage<1)currentPage=1;if(currentPage>totalPages)currentPage=totalPages;loadData()}
+function esc(v){return String(v??'').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]))}function badge(s){let x=String(s||'');let c=x.toLowerCase().includes('non')||x.toLowerCase().includes('errore')?'bad':x.toLowerCase().includes('trasmette')?'ok':'warn';return `<span class="badge ${c}">${esc(x||'Da Sync')}</span>`}function filtersHtml(){return `<div class="filters"><div class="field"><label>Ricerca</label><input id="search" placeholder="Matricola, P.IVA, cliente o link..."></div><div class="field"><label>Mese Ultima VP</label><select id="vpMonth"><option value="">Tutti</option>${['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'].map((m,i)=>`<option value="${String(i+1).padStart(2,'0')}">${m}</option>`).join('')}</select></div><div class="field"><label>Anno VP</label><input id="vpYear" type="number" placeholder="Tutti"></div><div class="field"><label>Azioni</label><div class="filter-actions"><button onclick="resetPaginationAndLoad()">Applica Filtri</button><button class="secondary" onclick="resetFilters()">Reset Filtri</button></div></div></div>`}document.getElementById('filtersDash').innerHTML=filtersHtml();document.getElementById('filtersDevices').innerHTML=filtersHtml();function renderHead(id){document.getElementById(id).innerHTML='<tr>'+headers.map(h=>`<th onclick="sortTable(this)">${h}</th>`).join('')+'</tr>'}renderHead('thead1');renderHead('thead2');function renderRows(rows){return rows.map(r=>`<tr>
+<td data-label="Matricola"><b>${esc(r.matricola)}</b></td>
+<td data-label="Stato">${badge(r.stato)}</td>
+<td data-label="Ultima VP">${esc(r.data_vp)}</td>
+<td data-label="Risultato VP">${esc(r.risultato_vp)}</td>
+<td data-label="PIVA Lab">${esc(r.piva_laboratorio)}</td>
+<td data-label="CF Tecnico">${esc(r.cf_tecnico)}</td>
+<td data-label="Ultima Trasmissione">${esc(r.ultima_trasmissione)}</td>
+<td data-label="Versione SW">${esc(r.versione_software)}</td>
+<td data-label="P.IVA">${esc(r.partita_iva)}</td>
+<td data-label="Cliente" class="cliente-cell" title="${esc(r.denominazione)}">${esc(truncateClientName(r.denominazione))}</td>
+<td data-label="QR">${r.link_qr?`<a class="qr" target="_blank" href="${esc(r.link_qr)}">▦</a>`:''}</td>
+<td data-label="Ultima Sync">${esc(r.last_sync)}</td>
+</tr>`).join('')}function getFilter(){let p=document.querySelector('.page.active');return {q:p.querySelector('#search')?.value||'',vpMonth:p.querySelector('#vpMonth')?.value||'',vpYear:p.querySelector('#vpYear')?.value||''}}async function loadData(){let f=getFilter();let params=new URLSearchParams({...f,page:currentPage,perPage});let res=await fetch('/api/results?'+params.toString());let data=await res.json();currentData=data.rows||[];totalPages=data.totalPages||1;totalRecords=data.total||currentData.length;document.getElementById('tbodyDash').innerHTML=renderRows(currentData);document.getElementById('tbodyDevices').innerHTML=renderRows(currentData);document.getElementById('kpiTotal').textContent=totalRecords.toLocaleString('it-IT');renderPagination();}function renderPagination(){let h=`<div class="pagination"><span>Pagina ${currentPage} di ${totalPages} - Totale ${totalRecords} record</span><span><button class="secondary" ${currentPage<=1?'disabled':''} onclick="changePage(-1)">← Precedente</button> <button class="secondary" ${currentPage>=totalPages?'disabled':''} onclick="changePage(1)">Successiva →</button> <select onchange="perPage=Number(this.value);currentPage=1;loadData()"><option selected>100</option><option>250</option><option>500</option></select></span></div>`;document.getElementById('paginationDash').innerHTML=h;document.getElementById('paginationDevices').innerHTML=h}function changePage(d){currentPage+=d;if(currentPage<1)currentPage=1;if(currentPage>totalPages)currentPage=totalPages;loadData()}
 function resetFilters(){
   ['search','vpMonth','vpYear'].forEach(id=>{
     document.querySelectorAll('#'+id).forEach(el=>{

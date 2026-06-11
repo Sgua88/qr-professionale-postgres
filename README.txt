@@ -70,3 +70,11 @@ AGGIORNAMENTO COLONNA CLIENTE
 AGGIORNAMENTO COLONNA CLIENTE
 - La colonna Cliente viene visualizzata con massimo 42 caratteri.
 - Se il nome cliente supera 42 caratteri viene mostrato con "..." finale.
+
+
+AGGIORNAMENTO MOBILE
+- Tabella trasformata automaticamente in schede su smartphone.
+- Filtri ricerca sticky e più comodi da usare con il dito.
+- Pulsanti e paginazione ingranditi per mobile.
+- KPI e menu inferiore ottimizzati per schermi piccoli.
+- Colonna Cliente mantenuta a 42 caratteri con puntini.
