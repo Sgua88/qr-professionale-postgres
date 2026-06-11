@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const crypto = require('crypto');
 const cron = require('node-cron');
 const { Pool } = require('pg');
 const initSqlJs = require('sql.js');
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 3000;
 const DATABASE_URL = process.env.DATABASE_URL;
 const AUTH_USER = process.env.AUTH_USER || 'rasisnc';
 const AUTH_PASS = process.env.AUTH_PASS || 'Gianluca1';
+const AUTH_SECRET = process.env.AUTH_SECRET || process.env.COOKIE_SECRET || 'qr-manager-change-this-secret';
 const SQLITE_SEED_PATH = path.join(__dirname, 'data', 'qrcode.db');
 
 if (!DATABASE_URL) {
@@ -25,21 +27,94 @@ const pool = new Pool({
 });
 
 app.use(express.json({ limit: '8mb' }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), { index: false }));
 app.get('/jsQR.js', (req, res) => res.sendFile(path.join(__dirname, 'node_modules', 'jsqr', 'dist', 'jsQR.js')));
 
-function basicAuth(req, res, next) {
-  const header = req.headers.authorization || '';
-  const [type, token] = header.split(' ');
-  if (type === 'Basic' && token) {
-    const decoded = Buffer.from(token, 'base64').toString();
-    const i = decoded.indexOf(':');
-    if (i !== -1 && decoded.slice(0, i) === AUTH_USER && decoded.slice(i + 1) === AUTH_PASS) return next();
-  }
-  res.setHeader('WWW-Authenticate', 'Basic realm="QR Manager"');
-  res.status(401).send('Accesso negato');
+function parseCookies(req) {
+  const raw = req.headers.cookie || '';
+  return raw.split(';').reduce((acc, part) => {
+    const i = part.indexOf('=');
+    if (i > -1) acc[part.slice(0, i).trim()] = decodeURIComponent(part.slice(i + 1).trim());
+    return acc;
+  }, {});
 }
-app.use(basicAuth);
+
+function signToken(payload) {
+  const body = Buffer.from(JSON.stringify(payload)).toString('base64url');
+  const sig = crypto.createHmac('sha256', AUTH_SECRET).update(body).digest('base64url');
+  return `${body}.${sig}`;
+}
+
+function verifyToken(token) {
+  if (!token || !token.includes('.')) return null;
+  const [body, sig] = token.split('.');
+  const expected = crypto.createHmac('sha256', AUTH_SECRET).update(body).digest('base64url');
+  try {
+    if (!crypto.timingSafeEqual(Buffer.from(sig), Buffer.from(expected))) return null;
+    const payload = JSON.parse(Buffer.from(body, 'base64url').toString());
+    if (!payload.user || !payload.exp || Date.now() > payload.exp) return null;
+    if (payload.user !== AUTH_USER) return null;
+    return payload;
+  } catch {
+    return null;
+  }
+}
+
+function getAuth(req) {
+  const cookies = parseCookies(req);
+  return verifyToken(cookies.qr_session);
+}
+
+function requireAuth(req, res, next) {
+  if (getAuth(req)) return next();
+  if (req.path.startsWith('/api/')) return res.status(401).json({ error: 'Non autenticato' });
+  return res.redirect('/login');
+}
+
+function setSessionCookie(res, remember) {
+  const durationMs = remember ? 1000 * 60 * 60 * 24 * 30 : 1000 * 60 * 60 * 12;
+  const token = signToken({ user: AUTH_USER, exp: Date.now() + durationMs });
+  const secure = process.env.NODE_ENV === 'production' ? '; Secure' : '';
+  const maxAge = remember ? `; Max-Age=${60 * 60 * 24 * 30}` : '';
+  res.setHeader('Set-Cookie', `qr_session=${encodeURIComponent(token)}; HttpOnly; Path=/; SameSite=Lax${secure}${maxAge}`);
+}
+
+function clearSessionCookie(res) {
+  const secure = process.env.NODE_ENV === 'production' ? '; Secure' : '';
+  res.setHeader('Set-Cookie', `qr_session=; HttpOnly; Path=/; SameSite=Lax${secure}; Max-Age=0`);
+}
+
+app.get('/login', (req, res) => {
+  if (getAuth(req)) return res.redirect('/');
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+app.get('/', requireAuth, (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.post('/api/auth/login', (req, res) => {
+  const { username, password, remember } = req.body || {};
+  if (username === AUTH_USER && password === AUTH_PASS) {
+    setSessionCookie(res, !!remember);
+    return res.json({ success: true, user: AUTH_USER });
+  }
+  return res.status(401).json({ success: false, error: 'Credenziali non corrette' });
+});
+
+app.post('/api/auth/logout', (req, res) => {
+  clearSessionCookie(res);
+  res.json({ success: true });
+});
+
+app.get('/api/auth/me', requireAuth, (req, res) => {
+  res.json({ user: AUTH_USER });
+});
+
+app.use('/api', requireAuth);
+app.use('/download-db', requireAuth);
+
+
 
 const DEFAULT_SYNC_CONFIG = {
   batchSize: Number(process.env.SYNC_BATCH_SIZE || 25),

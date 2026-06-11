@@ -125,3 +125,18 @@ SOSTITUZIONE TOTALE LOGHI / WEBAPP
   - icona iPhone (apple-touch-icon)
   - icone PWA/manifest
   - icone webapp standalone
+
+
+AGGIORNAMENTO LOGIN PROFESSIONALE
+- Rimossa la finestrella Basic Auth del browser.
+- Aggiunta pagina /login con grafica QR Manager.
+- Aggiunto pulsante "Ricordami su questo dispositivo".
+- Il login viene mantenuto tramite cookie HttpOnly firmato.
+- Durata sessione:
+  - con Ricordami: 30 giorni
+  - senza Ricordami: sessione temporanea
+- Aggiunto pulsante "Esci".
+- Variabili consigliate su Render:
+  AUTH_USER=rasisnc
+  AUTH_PASS=Gianluca1
+  AUTH_SECRET=stringa-lunga-casuale
