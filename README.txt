@@ -66,3 +66,7 @@ Online Railway/Render danno HTTPS automatico.
 AGGIORNAMENTO COLONNA CLIENTE
 - La colonna Cliente viene visualizzata con massimo 62 caratteri.
 - Se il nome cliente supera 62 caratteri viene mostrato con "..." finale.
+
+AGGIORNAMENTO COLONNA CLIENTE
+- La colonna Cliente viene visualizzata con massimo 42 caratteri.
+- Se il nome cliente supera 42 caratteri viene mostrato con "..." finale.
