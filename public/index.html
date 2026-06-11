@@ -442,6 +442,22 @@ html[data-theme="dark"] .qr{background:#1f2937!important;color:#fff!important}
   font-size:17px!important;
 }
 
+
+/* ===== FIX MATRICOLA MOBILE TEMA SCURO ===== */
+@media(max-width:760px){
+  html[data-theme="dark"] td:first-child b,
+  html[data-theme="dark"] td[data-label="Matricola"] b,
+  html[data-theme="dark"] td[data-label="Matricola"],
+  html[data-theme="dark"] tr td:first-child{
+    color:var(--app-text)!important;
+  }
+
+  html[data-theme="dark"] td:first-child::before,
+  html[data-theme="dark"] td[data-label="Matricola"]::before{
+    color:var(--app-muted)!important;
+  }
+}
+
 </style></head><body><div class="overlay" id="overlay" onclick="toggleMenu(false)"></div><div class="app"><aside class="sidebar" id="side">
 <div class="brand">
   <img class="brand-logo" src="assets/logo-qrmanager.png" alt="QR Manager Logo">

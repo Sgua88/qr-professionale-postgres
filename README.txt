@@ -101,3 +101,8 @@ AGGIORNAMENTO SINCRONIZZAZIONE / TEMA
 - Rimossa la selezione "Giorno mese" dalla schermata Sincronizzazione.
 - Il pulsante Tema scuro / Tema chiaro è stato spostato sotto Log Attività nel menu funzioni.
 - Il pulsante tema usa ora lo stesso stile/colore degli altri tasti funzione.
+
+
+FIX MOBILE TEMA SCURO
+- Corretta la leggibilità della matricola nella vista mobile con tema scuro.
+- La matricola ora usa lo stesso colore delle altre scritte leggibili.
