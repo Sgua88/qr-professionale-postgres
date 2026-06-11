@@ -95,3 +95,9 @@ AGGIORNAMENTO TEMA CHIARO/SCURO
 LOGO INSERITO
 - Inserito il logo QR Manager in alto a sinistra accanto alla scritta QR MANAGER.
 - File logo aggiunto in: public/assets/logo-qrmanager.png
+
+
+AGGIORNAMENTO SINCRONIZZAZIONE / TEMA
+- Rimossa la selezione "Giorno mese" dalla schermata Sincronizzazione.
+- Il pulsante Tema scuro / Tema chiaro è stato spostato sotto Log Attività nel menu funzioni.
+- Il pulsante tema usa ora lo stesso stile/colore degli altri tasti funzione.
