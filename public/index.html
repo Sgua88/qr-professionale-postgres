@@ -458,7 +458,21 @@ html[data-theme="dark"] .qr{background:#1f2937!important;color:#fff!important}
   }
 }
 
-</style></head><body><div class="overlay" id="overlay" onclick="toggleMenu(false)"></div><div class="app"><aside class="sidebar" id="side">
+</style>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f172a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="QR Manager">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="application-name" content="QR Manager">
+<meta name="msapplication-TileColor" content="#0f172a">
+<meta name="msapplication-config" content="/browserconfig.xml">
+
+</head><body><div class="overlay" id="overlay" onclick="toggleMenu(false)"></div><div class="app"><aside class="sidebar" id="side">
 <div class="brand">
   <img class="brand-logo" src="assets/logo-qrmanager.png" alt="QR Manager Logo">
   <div class="brand-text">
@@ -545,4 +559,15 @@ document.addEventListener('keydown', function(e){
 });
 
 document.getElementById('dateNow').textContent=new Date().toLocaleString('it-IT');loadData();loadSchedule();refreshSyncStatus();setInterval(refreshSyncStatus,2000);
-</script></body></html>
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('/service-worker.js').catch(function(err){
+      console.warn('Service worker non registrato:', err);
+    });
+  });
+}
+</script>
+
+</body></html>

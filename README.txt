@@ -106,3 +106,11 @@ AGGIORNAMENTO SINCRONIZZAZIONE / TEMA
 FIX MOBILE TEMA SCURO
 - Corretta la leggibilità della matricola nella vista mobile con tema scuro.
 - La matricola ora usa lo stesso colore delle altre scritte leggibili.
+
+
+AGGIORNAMENTO WEBAPP / ICONA MOBILE
+- Aggiunto manifest.json per installare il sito come webapp/PWA.
+- Il logo QR Manager viene usato come icona su Android e iPhone.
+- Aggiunte icone 192x192, 512x512, Apple Touch Icon e favicon.
+- Aggiunto service-worker.js leggero per rendere la webapp installabile.
+- Da smartphone: apri il sito HTTPS, poi usa "Aggiungi a schermata Home".
