@@ -114,3 +114,14 @@ AGGIORNAMENTO WEBAPP / ICONA MOBILE
 - Aggiunte icone 192x192, 512x512, Apple Touch Icon e favicon.
 - Aggiunto service-worker.js leggero per rendere la webapp installabile.
 - Da smartphone: apri il sito HTTPS, poi usa "Aggiungi a schermata Home".
+
+
+SOSTITUZIONE TOTALE LOGHI / WEBAPP
+- Sostituiti tutti i loghi e le immagini icona della webapp con la nuova immagine fornita.
+- Aggiornati:
+  - logo del sito in alto a sinistra
+  - favicon browser
+  - icone Android
+  - icona iPhone (apple-touch-icon)
+  - icone PWA/manifest
+  - icone webapp standalone
