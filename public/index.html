@@ -283,6 +283,46 @@
   }
 }
 
+
+/* ===== MOBILE MENU PATCH ===== */
+@media(max-width:760px){
+  .mobilebar{
+    display:none!important;
+  }
+
+  .page{
+    padding-bottom:18px!important;
+  }
+
+  .hamb{
+    width:46px!important;
+    height:46px!important;
+    border-radius:15px!important;
+    background:linear-gradient(135deg,#ff7a18,#ff9f43)!important;
+    color:#fff!important;
+    border:0!important;
+    box-shadow:0 10px 24px rgba(255,122,24,.36)!important;
+    font-size:24px!important;
+    font-weight:900!important;
+  }
+
+  .hamb:hover,
+  .hamb:active{
+    background:linear-gradient(135deg,#f97316,#ea580c)!important;
+    transform:translateY(-1px);
+  }
+
+  .hamb svg,
+  .hamb i,
+  .hamb span{
+    color:#fff!important;
+  }
+
+  .sidebar.open{
+    box-shadow:0 24px 80px rgba(15,23,42,.30)!important;
+  }
+}
+
 </style></head><body><div class="overlay" id="overlay" onclick="toggleMenu(false)"></div><div class="app"><aside class="sidebar" id="side"><div class="brand"><div class="logo">▦</div><div><h1>QR Manager</h1><p>Gestione dispositivi</p></div></div><nav class="nav"><a class="active" onclick="showPage('dashboard',this)">🏠 Dashboard</a><a onclick="showPage('devices',this)">▣ Dispositivi</a><a onclick="showPage('import',this)">▦ Importa QR Code</a><a onclick="showPage('sync',this)">↻ Sincronizzazione</a><a onclick="showPage('logs',this)">▤ Log Attività</a></nav><div class="userbox"><b>rasisnc</b><br><small>Amministratore</small><br><br><a class="btn secondary" href="/download-db">Scarica DB</a></div></aside><main><header class="topbar"><button class="hamb" onclick="toggleMenu(true)">☰</button><h2 id="pageTitle">Dashboard</h2><div>📅 <span id="dateNow"></span></div></header>
 <section class="page active" id="dashboard"><div class="cards"><div class="kpi"><div class="icon i1">▣</div><div><span>Dispositivi Totali</span><br><b id="kpiTotal">0</b></div></div><div class="kpi"><div class="icon i2">✓</div><div><span>Sincronizzati</span><br><b id="kpiUpdated">0</b></div></div><div class="kpi"><div class="icon i3">◷</div><div><span>Da Sincronizzare</span><br><b id="kpiRemain">0</b></div></div><div class="kpi"><div class="icon i4">⚠</div><div><span>Errori</span><br><b id="kpiErrors">0</b></div></div></div><div class="card"><h3>Lista Dispositivi</h3><div id="filtersDash"></div><div class="tablewrap"><table id="tabDash"><thead id="thead1"></thead><tbody id="tbodyDash"></tbody></table></div><div id="paginationDash"></div></div></section>
 <section class="page" id="devices"><div class="card"><h3>Lista Dispositivi</h3><div id="filtersDevices"></div><div class="tablewrap"><table id="tabDevices"><thead id="thead2"></thead><tbody id="tbodyDevices"></tbody></table></div><div id="paginationDevices"></div></div></section>

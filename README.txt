@@ -78,3 +78,9 @@ AGGIORNAMENTO MOBILE
 - Pulsanti e paginazione ingranditi per mobile.
 - KPI e menu inferiore ottimizzati per schermi piccoli.
 - Colonna Cliente mantenuta a 42 caratteri con puntini.
+
+
+AGGIORNAMENTO MOBILE MENU
+- Rimossa/nascosta la barra funzioni in basso su smartphone.
+- Il pulsante menu in alto a sinistra è ora arancione, più visibile e coerente con il menu funzioni.
+- Ridotto lo spazio vuoto inferiore della pagina dopo la rimozione della barra.
