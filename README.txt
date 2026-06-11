@@ -90,3 +90,8 @@ AGGIORNAMENTO TEMA CHIARO/SCURO
 - Aggiunto pulsante Tema scuro / Tema chiaro nella parte bassa del menu funzioni.
 - La preferenza viene salvata nel browser.
 - Tema scuro applicato a dashboard, tabelle, filtri, input e menu.
+
+
+LOGO INSERITO
+- Inserito il logo QR Manager in alto a sinistra accanto alla scritta QR MANAGER.
+- File logo aggiunto in: public/assets/logo-qrmanager.png
