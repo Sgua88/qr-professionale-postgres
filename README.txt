@@ -84,3 +84,9 @@ AGGIORNAMENTO MOBILE MENU
 - Rimossa/nascosta la barra funzioni in basso su smartphone.
 - Il pulsante menu in alto a sinistra è ora arancione, più visibile e coerente con il menu funzioni.
 - Ridotto lo spazio vuoto inferiore della pagina dopo la rimozione della barra.
+
+
+AGGIORNAMENTO TEMA CHIARO/SCURO
+- Aggiunto pulsante Tema scuro / Tema chiaro nella parte bassa del menu funzioni.
+- La preferenza viene salvata nel browser.
+- Tema scuro applicato a dashboard, tabelle, filtri, input e menu.
