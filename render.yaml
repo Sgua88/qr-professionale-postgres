@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: qr-manager-pro
+    env: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: AUTH_USER
+        value: rasisnc
+      - key: AUTH_PASS
+        value: Gianluca1
+      - key: DATABASE_URL
+        fromDatabase:
+          name: qr-manager-db
+          property: connectionString
+
+databases:
+  - name: qr-manager-db
+    plan: starter

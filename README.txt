@@ -1,0 +1,68 @@
+QR MANAGER - VERSIONE PROFESSIONALE POSTGRESQL
+
+Credenziali default:
+Utente: rasisnc
+Password: Gianluca1
+
+Questa versione sostituisce SQLite con PostgreSQL.
+È pensata per uso online professionale con Railway, Render o server VPS.
+
+FUNZIONI INCLUSE
+- Dashboard moderna responsive desktop/smartphone
+- Login
+- PostgreSQL
+- Import iniziale automatico da data/qrcode.db
+- Import QR immagine
+- Scanner fotocamera smartphone con HTTPS
+- Import link manuale
+- Sync intelligente
+- Batch automatici
+- Ripresa automatica
+- Cache anti-ban AE su tabella PostgreSQL
+- Salvataggio progressivo nel database
+- Programmazione giornaliera, settimanale, mensile
+- Paginazione 100 record per pagina
+- Filtri Ultima VP mese/anno
+- Reset Filtri
+- Ricerca con Invio
+
+LOCALE CON DOCKER
+1. Installa Docker Desktop
+2. Apri il prompt nella cartella
+3. Esegui:
+   docker compose up --build
+4. Apri:
+   http://localhost:3000
+
+LOCALE SENZA DOCKER
+1. Installa PostgreSQL
+2. Crea database qrmanager
+3. Copia .env.example in .env oppure imposta DATABASE_URL
+4. Esegui:
+   npm install
+   npm start
+
+VARIABILI IMPORTANTI
+DATABASE_URL=postgresql://utente:password@host:porta/database
+AUTH_USER=rasisnc
+AUTH_PASS=Gianluca1
+
+DEPLOY ONLINE CONSIGLIATO
+Railway:
+- crea progetto Node.js da GitHub
+- aggiungi PostgreSQL
+- imposta DATABASE_URL se non già presente
+- deploy automatico
+
+Render:
+- usa render.yaml incluso
+- crea Web Service + PostgreSQL
+- imposta variabili AUTH_USER e AUTH_PASS
+
+NOTA FOTOCAMERA
+La fotocamera smartphone funziona correttamente solo con HTTPS.
+Online Railway/Render danno HTTPS automatico.
+
+AGGIORNAMENTO COLONNA CLIENTE
+- La colonna Cliente viene visualizzata con massimo 62 caratteri.
+- Se il nome cliente supera 62 caratteri viene mostrato con "..." finale.
